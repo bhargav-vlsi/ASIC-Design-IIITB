@@ -1,4 +1,4 @@
-# iiitb_asic_class
+# ASIC Design
 
 <details>
 <summary>DAY-1</summary>
