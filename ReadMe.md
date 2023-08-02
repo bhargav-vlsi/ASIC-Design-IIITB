@@ -83,6 +83,7 @@ sudo apt-get install cmake clang gcctcl swig bison flex
 cmake ..
 make
 ```
-![ngspice](https://github.com/bhargav-vlsi/ASIC-Design-IIITB/assets/141163376/84cc0419-139d-4cc7-8e24-3df164950c9a)
+![opensta](https://github.com/bhargav-vlsi/ASIC-Design-IIITB/assets/141163376/ce6d6daa-5bc7-469d-bb34-c497b56167fc)
+
 Open STA installed
 </details>
