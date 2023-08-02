@@ -84,7 +84,7 @@ cmake ..
 make
 ```
 ![opensta](https://github.com/bhargav-vlsi/ASIC-Design-IIITB/assets/141163376/ce6d6daa-5bc7-469d-bb34-c497b56167fc)
-
+Note: Additional step of storing path of openSTA executable file in environment variables is done for easy access in terminal
 Open STA installed
 
 ### Magic tool installation
