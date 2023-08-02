@@ -14,7 +14,7 @@ sudo apt-get install iverilog
 ```
 
 
-file:///home/bhargav/Pictures/Screenshots/iverilog.png
+![iverilog](https://github.com/bhargav-vlsi/ASIC-Design-IIITB/assets/141163376/1fce1434-4d84-4f1e-b2d3-c2b06fe998d4)
 
 
 iverilog tool installed
@@ -36,7 +36,7 @@ make
 sudo make install
 ```
 
-file:///home/bhargav/Pictures/Screenshots/yosys.png
+![yosys](https://github.com/bhargav-vlsi/ASIC-Design-IIITB/assets/141163376/f7030fd6-fe4a-4c98-b873-1826deb7fcfa)
 
 
 Yosys installed
@@ -50,7 +50,8 @@ Yosys installed
 sudo apt update
 sudo apt install gtkwave
 ```
-file:///home/bhargav/Pictures/Screenshots/gtkwave.png
+
+![gtkwave](https://github.com/bhargav-vlsi/ASIC-Design-IIITB/assets/141163376/ee1bf47a-cf28-494f-b449-2dfa35d27cb9)
 
 gtkwave installed
 
