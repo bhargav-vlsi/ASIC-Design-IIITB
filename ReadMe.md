@@ -58,7 +58,8 @@ gtkwave installed
 ### Ngspice installation
 **Steps to install ngspice**
 ```
-wget https://sourceforge.net/projects/ngspice/files/
+wget https://sourceforge.net/projects/ngspice/files/ngspice-40.tar.gz
+tar -zxvf ngspice-40.tar.gz
 cd ngspice-40
 mkdir release
 cd release
