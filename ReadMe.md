@@ -55,5 +55,18 @@ sudo apt install gtkwave
 
 gtkwave installed
 
-
+### Ngspice installation
+**Steps to install ngspice**
+```
+wget https://sourceforge.net/projects/ngspice/files/
+cd ngspice-40
+mkdir release
+cd release
+sudo apt install automake libtool libxaw7-dev flex bison libncurses5-dev
+../configure  --with-x --with-readline=yes --disable-debug
+make
+sudo make install
+```
+![ngspice](https://github.com/bhargav-vlsi/ASIC-Design-IIITB/assets/141163376/84cc0419-139d-4cc7-8e24-3df164950c9a)
+ngspice installed
 </details>
