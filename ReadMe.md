@@ -71,4 +71,18 @@ sudo make install
 ![ngspice](https://github.com/bhargav-vlsi/ASIC-Design-IIITB/assets/141163376/84cc0419-139d-4cc7-8e24-3df164950c9a)
 
 ngspice installed
+
+### OpenSTA Installtion
+**Steps to install OpenSTA**
+```
+git clone https://github.com/The-OpenROAD-Project/OpenSTA.git
+cd OpenSTA
+mkdir build
+cd build
+sudo apt-get install cmake clang gcctcl swig bison flex
+cmake ..
+make
+```
+![ngspice](https://github.com/bhargav-vlsi/ASIC-Design-IIITB/assets/141163376/84cc0419-139d-4cc7-8e24-3df164950c9a)
+Open STA installed
 </details>
