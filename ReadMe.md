@@ -86,4 +86,27 @@ make
 ![opensta](https://github.com/bhargav-vlsi/ASIC-Design-IIITB/assets/141163376/ce6d6daa-5bc7-469d-bb34-c497b56167fc)
 
 Open STA installed
+
+### Magic tool installation
+**steps to install magic layout tool**
+```
+sudo apt-get install m4
+sudo apt-get install tcsh
+sudo apt-get install csh
+sudo apt-get install libx11-dev
+sudo apt-get install tcl-dev tk-dev
+sudo apt-get install libcairo2-dev
+sudo apt-get install mesa-common-dev libglu1-mesa-dev
+sudo apt-get install libncurses-dev
+git clone https://github.com/RTimothyEdwards/magic
+cd magic-master
+./configure
+make
+make install
+sudo apt install magic
+```
+
+![magic](https://github.com/bhargav-vlsi/ASIC-Design-IIITB/assets/141163376/d30d5299-d203-4ea3-8d12-0089c3ca8850)
+
+Magic tool installed
 </details>
