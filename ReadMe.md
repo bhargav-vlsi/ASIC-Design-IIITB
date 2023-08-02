@@ -68,5 +68,6 @@ make
 sudo make install
 ```
 ![ngspice](https://github.com/bhargav-vlsi/ASIC-Design-IIITB/assets/141163376/84cc0419-139d-4cc7-8e24-3df164950c9a)
+
 ngspice installed
 </details>
