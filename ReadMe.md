@@ -14,7 +14,7 @@ sudo apt-get install iverilog
 ```
 
 
-![iverilog](https://github.com/bhargav-vlsi/ASIC-Design-IIITB/assets/141163376/1fce1434-4d84-4f1e-b2d3-c2b06fe998d4)
+![iverilog](./Images/Iverilog.png)
 
 
 iverilog tool installed
@@ -36,8 +36,7 @@ make
 sudo make install
 ```
 
-![yosys](https://github.com/bhargav-vlsi/ASIC-Design-IIITB/assets/141163376/f7030fd6-fe4a-4c98-b873-1826deb7fcfa)
-
+![yosys](./Images/Yosys.png)
 
 Yosys installed
 
@@ -51,7 +50,7 @@ sudo apt update
 sudo apt install gtkwave
 ```
 
-![gtkwave](https://github.com/bhargav-vlsi/ASIC-Design-IIITB/assets/141163376/ee1bf47a-cf28-494f-b449-2dfa35d27cb9)
+![gtkwave](./Images/Gtkwave.png)
 
 gtkwave installed
 
@@ -68,7 +67,7 @@ sudo apt install automake libtool libxaw7-dev flex bison libncurses5-dev
 make
 sudo make install
 ```
-![ngspice](https://github.com/bhargav-vlsi/ASIC-Design-IIITB/assets/141163376/84cc0419-139d-4cc7-8e24-3df164950c9a)
+![ngspice](./Images/Ngspice.png)
 
 ngspice installed
 
@@ -83,7 +82,7 @@ sudo apt-get install cmake clang gcctcl swig bison flex
 cmake ..
 make
 ```
-![opensta](https://github.com/bhargav-vlsi/ASIC-Design-IIITB/assets/141163376/ce6d6daa-5bc7-469d-bb34-c497b56167fc)
+![opensta](./Images/OpenSTA.png)
 
 Note: Additional step of storing path of openSTA executable file in environment variables is done for easy access in terminal
 
@@ -108,7 +107,7 @@ make install
 sudo apt install magic
 ```
 
-![magic](https://github.com/bhargav-vlsi/ASIC-Design-IIITB/assets/141163376/d30d5299-d203-4ea3-8d12-0089c3ca8850)
+![magic](./Images/Magic.png)
 
 Magic tool installed
 </details>
