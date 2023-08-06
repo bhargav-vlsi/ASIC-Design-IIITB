@@ -110,14 +110,20 @@ sudo apt install magic
 ![magic](./Images/Magic.png)
 
 Magic tool installed
+</details>
 
 <summary>REFERENCES</summary>
 
-https://yosyshq.net/yosys/
 https://steveicarus.github.io/iverilog/
+
+https://yosyshq.net/yosys/
+
 https://gtkwave.sourceforge.net/
+
 https://ngspice.sourceforge.io/
+
 https://github.com/The-OpenROAD-Project/OpenSTA
+
 http://opencircuitdesign.com/magic/
-https://github.com/The-OpenROAD-Project/OpenLane
+
 </details>
