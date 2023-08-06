@@ -1,7 +1,5 @@
 # ASIC Design
-[Day-0](#day-0) Installation of required Tools.
 
-[References](#references) List of references of tools installed
 <details>
 <summary>DAY-0</summary>
 <br>
@@ -115,7 +113,7 @@ Magic tool installed
 </details>
 <details>
 <summary>REFERENCES</summary>
-##References
+
     
 https://steveicarus.github.io/iverilog/
 
