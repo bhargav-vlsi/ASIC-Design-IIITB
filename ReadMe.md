@@ -1,7 +1,7 @@
 # ASIC Design
 [Day-0](#day-0) Installation of required Tools.
 
-[REFERENCES](#references) List of references of tools installed
+[Rferences](#references) List of references of tools installed
 <details>
 <summary>DAY-0</summary>
 <br>
