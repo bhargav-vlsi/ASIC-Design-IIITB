@@ -1,5 +1,7 @@
 # ASIC Design
 [Day-0](#day-0) Installation of required Tools.
+
+[REFERENCES](#references) List of references of tools installed
 <details>
 <summary>DAY-0</summary>
 <br>
@@ -111,7 +113,7 @@ sudo apt install magic
 
 Magic tool installed
 </details>
-
+<details>
 <summary>REFERENCES</summary>
 
 https://steveicarus.github.io/iverilog/
