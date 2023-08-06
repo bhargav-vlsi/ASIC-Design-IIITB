@@ -115,7 +115,8 @@ Magic tool installed
 </details>
 <details>
 <summary>REFERENCES</summary>
-
+##References
+    
 https://steveicarus.github.io/iverilog/
 
 https://yosyshq.net/yosys/
