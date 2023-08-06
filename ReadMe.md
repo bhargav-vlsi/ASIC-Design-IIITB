@@ -1,10 +1,10 @@
 # ASIC Design
-
+[Day-0](#day-0) Installation of required Tools.
 <details>
-<summary>DAY-1</summary>
+<summary>DAY-0</summary>
 <br>
 
-## DAY-1
+## DAY-0
 
 ### Icarus Verilog Installation
 
