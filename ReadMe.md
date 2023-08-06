@@ -4,7 +4,7 @@
 <summary>DAY-0</summary>
 <br>
 
-## DAY-0
+
 
 ### Icarus Verilog Installation
 
