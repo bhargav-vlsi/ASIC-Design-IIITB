@@ -110,8 +110,8 @@ sudo apt install magic
 ![magic](./Images/Magic.png)
 
 Magic tool installed
-</details>
 
+</details>
 <summary>DAY-1</summary>
 <br>
 
