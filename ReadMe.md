@@ -111,6 +111,52 @@ sudo apt install magic
 
 Magic tool installed
 </details>
+
+<summary>DAY-1</summary>
+<br>
+
+### Overview
+This session is about steps followed to compile and simulate verilog design and testbench codes using iverilog tool. This section also deals with graphical waveform viewer tool called gtkwave and synthesis tool called yosys and its steps to produce netlist from design file.
+
+### Sample Verilog simulation
+This session takes an example of 2x1 multiplexer (verilog design and test bench) to demonstrate iverilog compilation and gtkwave waveform viewer. 
+
+The verilog codes are taken from github repository: https://github.com/kunalg123/sky130RTLDesignAndSynthesisWorkshop.git
+
+Following is syntax for compilation and execution of verilog codes to generation outputs.
+```
+iverilog designfile.v testbench.v
+./aout
+gtkwave vcdfile.vcd
+```
+![verilogcode](./Images/Verilogcode.png)
+
+Below represent simulation output of 2x1 multiplexer design.
+![simulation](./Images/Simulation.png)
+
+### Yosys synthesis process
+This section explains the concept of yosys library cells and process of generating netlist using yosys tool. The library contains variety of cells with various operating speeds for different applications and avoid violations. 
+
+Following represents various commands used to generate netlist for given design.
+
+```
+yosys> read_liberty -lib <path to lib file>
+yosys> read_verilog <path to verilog file>
+yosys> synth -top <top_module_name>
+yosys> abc -liberty <path to lib file>
+yosys> show
+yosys> write_verilog <file_name_netlist.v>
+yosys> write_verilog -noattr <file_name_netlist.v>
+```
+
+Below represents schematic represented by yosys tool for given design.
+![Schematic](./Images/Schematic.png)
+
+Below represents netlist represented by yosys tool for given design.
+![Netlist](./Images/Netlist.png)
+ 
+</details>
+
 <details>
 <summary>REFERENCES</summary>
 
@@ -126,5 +172,7 @@ https://ngspice.sourceforge.io/
 https://github.com/The-OpenROAD-Project/OpenSTA
 
 http://opencircuitdesign.com/magic/
+
+https://github.com/kunalg123/sky130RTLDesignAndSynthesisWorkshop.git
 
 </details>
