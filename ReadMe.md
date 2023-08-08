@@ -110,8 +110,9 @@ sudo apt install magic
 ![magic](./Images/Magic.png)
 
 Magic tool installed
-
 </details>
+
+<details>
 <summary>DAY-1</summary>
 <br>
 
@@ -123,16 +124,27 @@ This session takes an example of 2x1 multiplexer (verilog design and test bench)
 
 The verilog codes are taken from github repository: https://github.com/kunalg123/sky130RTLDesignAndSynthesisWorkshop.git
 
+
+
 Following is syntax for compilation and execution of verilog codes to generation outputs.
 ```
 iverilog designfile.v testbench.v
 ./aout
 gtkwave vcdfile.vcd
 ```
+
+
+Below represents sample design verilog codes.
+
 ![verilogcode](./Images/Verilogcode.png)
 
+
+
 Below represent simulation output of 2x1 multiplexer design.
+
 ![simulation](./Images/Simulation.png)
+
+
 
 ### Yosys synthesis process
 This section explains the concept of yosys library cells and process of generating netlist using yosys tool. The library contains variety of cells with various operating speeds for different applications and avoid violations. 
@@ -149,8 +161,11 @@ yosys> write_verilog <file_name_netlist.v>
 yosys> write_verilog -noattr <file_name_netlist.v>
 ```
 
+
 Below represents schematic represented by yosys tool for given design.
 ![Schematic](./Images/Schematic.png)
+
+
 
 Below represents netlist represented by yosys tool for given design.
 ![Netlist](./Images/Netlist.png)
