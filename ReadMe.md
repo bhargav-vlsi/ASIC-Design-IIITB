@@ -173,6 +173,32 @@ Below represents netlist represented by yosys tool for given design.
 </details>
 
 <details>
+<summary>DAY-2</summary>
+
+### Overview
+This section describes basic understanding of lib technology file and its important aspects. This section also explains hierarchy and flat synthesis implementation of multiple modules.
+
+### Verilog modules
+The verilog codes are taken from github repository: https://github.com/kunalg123/sky130RTLDesignAndSynthesisWorkshop.git
+
+The verilog codes considered are multiple_moudules.v
+
+### Sample Synthesis of multiple modules
+This section explains the sample synthesis process involved in multiple modules rather than single module. The previously discussed yosys commands are used to execute synthesis process with respective parameters for two types of designs. They are hierarchy and flat designs. 
+
+Following represents schematic netlist of hierarchy design.
+![Multiple_modules](./Images/Multiple_modules.png)
+ 
+Following represents schematic netlist of flat design.
+![Multiple_modules_flat](./Images/Multiple_modules_flat.png)
+
+
+ 
+
+
+</details>
+
+<details>
 <summary>REFERENCES</summary>
 
     
