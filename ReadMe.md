@@ -181,7 +181,7 @@ This section describes basic understanding of lib technology file and its import
 ### Verilog modules
 The verilog codes are taken from github repository: https://github.com/kunalg123/sky130RTLDesignAndSynthesisWorkshop.git
 
-The verilog codes considered are multiple_moudules.v
+The verilog codes considered are multiple_modules.v
 
 ### Sample Synthesis of multiple modules
 This section explains the sample synthesis process involved in multiple modules rather than single module. The previously discussed yosys commands are used to execute synthesis process with respective parameters for two types of designs. They are hierarchy and flat designs. 
