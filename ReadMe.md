@@ -242,7 +242,7 @@ Following represents asynchronous set signal in action.
 ![Dff_async_set](./Images/Dff_async_set.png)
  
 Following represents synchronous reset signal in action.
-![Dff_sync_set](./Images/Dff_sync_set.png)
+![Dff_sync_res](./Images/Dff_sync_res.png)
 
 ### Synthesis of Flop circuits
 This section explains steps to be followed in synthesis of circuits containing flop modules and its commands.
@@ -266,7 +266,7 @@ Following represents asynchronous set signal in action.
 ![Dff_async_set](./Images/Dff_async_set.png)
  
 Following represents synchronous reset signal in action.
-![Dff_sync_set](./Images/Dff_sync_set.png)
+![Dff_sync_res](./Images/Dff_sync_res.png)
 
 </details>
 
