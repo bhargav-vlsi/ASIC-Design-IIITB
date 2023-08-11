@@ -169,8 +169,15 @@ Below represents schematic represented by yosys tool for given design.
 
 Below represents netlist represented by yosys tool for given design.
 ![Netlist](./Images/Netlist.png)
- 
+
+
+
+
+
+
 </details>
+
+
 
 <details>
 <summary>DAY-2</summary>
@@ -181,10 +188,20 @@ This section describes basic understanding of lib technology file and its import
 ### Verilog modules
 The verilog codes are taken from github repository: https://github.com/kunalg123/sky130RTLDesignAndSynthesisWorkshop.git
 
-The verilog codes considered are multiple_modules.v
+The verilog codes considered are multiple_moudules.v
 
 ### Sample Synthesis of multiple modules
 This section explains the sample synthesis process involved in multiple modules rather than single module. The previously discussed yosys commands are used to execute synthesis process with respective parameters for two types of designs. They are hierarchy and flat designs. 
+
+```
+yosys> read_liberty -lib <path to lib file>
+yosys> read_verilog <path to verilog file>
+yosys> synth -top <top_module_name>
+yosys> abc -liberty <path to lib file>
+yosys> flatten
+yosys> show
+yosys> write_verilog -noattr <file_name_netlist.v>
+```
 
 Following represents schematic netlist of hierarchy design.
 ![Multiple_modules](./Images/Multiple_modules.png)
@@ -193,7 +210,68 @@ Following represents schematic netlist of flat design.
 ![Multiple_modules_flat](./Images/Multiple_modules_flat.png)
 
 
+### Sample synthesis of submodules
+In this section, we learn about synthesis process of submodules and generating corrspnding netlist.
+
+We follow the similar steps as decribed previously with small change in synthesis command i.e we specify the subodule name we are interested and apply steps similar to we have seen previosuly till netlist generation.
+```
+yosys> read_liberty -lib <path to lib file>
+yosys> read_verilog <path to verilog file>
+synth -top <submodule_name>
+yosys> abc -liberty <path to lib file>
+yosys> show
+yosys> write_verilog -noattr <file_name_netlist.v>
+```
+
+Following represents synthesis schematic of two submodules defined in main design file.
+![Submodule1](./Images/Submodule1.png)
+
+![Submodule2](./Images/Submodule2.png)
+
+We prefer to synthesize submodules separately due to various reasons such as inefficient synthesis carried out if done with entire module, if design contains replica of sub modules, we would like to synthesize once and combine together in main module.
+
+### Coding styles
+This section explains about various coding styles. 
+
+Usually, in a digital circuit, we encounter an issue called as glitch. This is due to propagation delay associated with gates in circuit. To resolve this issue, we use D flip flop in between combinational circuits to hold the stable value and prevent it from disturbing next stage until positive edge of clock occurs. Hence, we want a particular value to occur initially. This is achieved through synchronous or asynchronous reset signals.
+
+Following represents asynchronous reset signal in action.
+![Dff_async_res](./Images/Dff_async_res.png)
+
+Following represents asynchronous set signal in action.
+![Dff_async_set](./Images/Dff_async_set.png)
  
+Following represents synchronous reset signal in action.
+![Dff_sync_set](./Images/Dff_sync_set.png)
+
+### Synthesis of Flop circuits
+This section explains steps to be followed in synthesis of circuits containing flop modules and its commands.
+
+These include an additional step specifically for FF designs to pick library cells specific to them. 
+```
+yosys> read_liberty -lib <path to lib file>
+yosys> read_verilog <path to verilog file>
+yosys> synth -top <top_module_name>
+yosys> dfflibmap -liberty <path to lib file>
+yosys> abc -liberty <path to lib file>
+yosys> show
+yosys> write_verilog <file_name_netlist.v>
+yosys> write_verilog -noattr <file_name_netlist.v>
+```
+
+Following represents asynchronous reset signal in action.
+![Dff_async_res](./Images/Dff_async_res.png)
+
+Following represents asynchronous set signal in action.
+![Dff_async_set](./Images/Dff_async_set.png)
+ 
+Following represents synchronous reset signal in action.
+![Dff_sync_set](./Images/Dff_sync_set.png)
+
+</details>
+
+<details>
+<summary>DAY-3</summary>
 
 
 </details>
