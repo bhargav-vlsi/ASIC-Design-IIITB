@@ -259,14 +259,14 @@ yosys> write_verilog <file_name_netlist.v>
 yosys> write_verilog -noattr <file_name_netlist.v>
 ```
 
-Following represents asynchronous reset signal in action.
-![Dff_async_res](./Images/Dff_async_res.png)
+Following represents asynchronous reset schematic representation.
+![Dff_async_res](./Images/Dff_async_res_schematic.png)
 
-Following represents asynchronous set signal in action.
-![Dff_async_set](./Images/Dff_async_set.png)
+Following represents asynchronous set schematic representation.
+![Dff_async_set](./Images/Dff_async_set_schematic.png)
  
-Following represents synchronous reset signal in action.
-![Dff_sync_res](./Images/Dff_sync_res.png)
+Following represents synchronous reset schematic representation.
+![Dff_sync_res](./Images/Dff_sync_res_schematic.png)
 
 </details>
 
