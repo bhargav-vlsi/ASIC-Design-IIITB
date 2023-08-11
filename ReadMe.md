@@ -268,6 +268,16 @@ Following represents asynchronous set schematic representation.
 Following represents synchronous reset schematic representation.
 ![Dff_sync_res](./Images/Dff_sync_res_schematic.png)
 
+### Interesting optimization exhibited by yosys
+This section describes about glimpse of optimization executed by yosys.
+
+Lets take example of hardware to that multiplies 2 to input and produces output. We think that we some kind of gates to achieve that execution, but at end of day its all playing with wires. The tool does not map hardware to any standard cell in library due to optimization.
+
+Following represents example of circuit to just multiply input to 2 and produce output.
+![mul2](./Images/mul2.png)
+
+
+
 </details>
 
 <details>
