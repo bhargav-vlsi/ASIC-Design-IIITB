@@ -317,14 +317,14 @@ Following represents simplified circuit for y = a?(b?(a & c ):c):(!c)
 ![opt_check4](./Images/opt_check4.png)
 
 Following represents sample multiple module verilog code and its simplified schematic diagram after optimization.
-![multiple_module_opt](./Images/multiple_module_opt.png)
-
 ![multiple_module_opt_code](./Images/multiple_module_opt_code.png)
 
-Following represents another sample multiple module  verilog code and its simplified schematic diagram after optimization.
-![multiple_module_opt2](./Images/multiple_module_opt2.png)
+![multiple_module_opt](./Images/multiple_module_opt.png)
 
+Following represents another sample multiple module  verilog code and its simplified schematic diagram after optimization.
 ![multiple_module_opt_code2](./Images/multiple_module_opt_code2.png)
+
+![multiple_module_opt2](./Images/multiple_module_opt2.png)
 
 ### Sequential logic optimization
 
