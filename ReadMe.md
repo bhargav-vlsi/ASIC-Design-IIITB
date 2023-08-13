@@ -328,7 +328,7 @@ Following represents another sample multiple module  verilog code and its simpli
 
 ### Sequential logic optimization
 
-We have used few examples of seuqential circuits to demonstrate optimization done by yosys.
+We have used few examples of sequential circuits to demonstrate optimization done by yosys.
 
 ```
 yosys> read_liberty -lib <path to lib file>
@@ -365,6 +365,15 @@ Following represents dff_const5 verilog code and its simplified schematic diagra
 ![dff_const5_code](./Images/dff_const5_code.png)
 
 ![dff_const5](./Images/dff_const5.png)
+
+### Unsued output optimization in sequential circuits
+
+The yosys tool removes unused logic not connected to outputs. Also, it removes outputs and its associated logic not required in output which is illustrated in below examples.
+
+Following represents code and schematic of sample counter_opt design. Though the code contains 3bit register, but still yosys will retain logic only visible in required final output.
+![counter_opt](./Images/counter_opt.png)
+
+![counter_opt2](./Images/counter_opt2.png)
 
 </details>
 
