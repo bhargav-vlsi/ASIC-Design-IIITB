@@ -283,6 +283,50 @@ Following represents example of circuit to just multiply input to 2 and produce 
 <details>
 <summary>DAY-3</summary>
 
+### Introduction to optimization
+Optimization plays an important while we design any hardware. It reduces number of components which inturn reduces size and improves performance. Many times, we come across an expression which by simplification reduces to a either simple variable or a constant value through reduction of unsued variables.
+
+For example, if a DFF having D=0 and reset=1 will always have Q=0 for all clk values.
+On the other side, if a DFF having D=0 and set signal will either Q=1 or Q=0 depending on set signal. If set=0 then Q =0 always. If set=1 Q=1 always.
+
+### Combinational logic optimization
+
+We have considered few examples to demonstrate optimization exhibited by yosys tool with additional step. The command removes unused cells and nets if any.
+```
+yosys> read_liberty -lib <path to lib file>
+yosys> read_verilog <path to verilog file>
+yosys> synth -top <top_module_name>
+yosys> opt_clean -purge
+yosys> abc -liberty <path to lib file>
+yosys> show
+yosys> write_verilog <file_name_netlist.v>
+yosys> write_verilog -noattr <file_name_netlist.v>
+```
+Following represents simplified circuit for y=a?b:0
+![opt_check](./Images/opt_check.png)
+
+Following represents simplified circuit for y=a?1:b
+![opt_check2](./Images/opt_check2.png)
+
+Following represents simplified circuit for y=a?(c?b:0):0
+![opt_check3](./Images/opt_check3.png)
+
+Below is a small lab exercise to understand optiization done by yosys.
+
+Following represents simplified circuit for y = a?(b?(a & c ):c):(!c)
+![opt_check4](./Images/opt_check4.png)
+
+Following represents sample multiple module verilog code and its simplified schematic diagram after optimization.
+![multiple_module_opt](./Images/multiple_module_opt.png)
+
+![multiple_module_opt_code](./Images/multiple_module_opt_code.png)
+
+Following represents another sample multiple module  verilog code and its simplified schematic diagram after optimization.
+![multiple_module_opt2](./Images/multiple_module_opt2.png)
+
+![multiple_module_opt_code2](./Images/multiple_module_opt_code2.png)
+
+### Sequential logic optimization
 
 </details>
 
