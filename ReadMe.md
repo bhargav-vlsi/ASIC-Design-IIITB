@@ -311,7 +311,7 @@ Following represents simplified circuit for y=a?1:b
 Following represents simplified circuit for y=a?(c?b:0):0
 ![opt_check3](./Images/opt_check3.png)
 
-Below is a small lab exercise to understand optiization done by yosys.
+Below is a small lab exercise to understand optimization done by yosys.
 
 Following represents simplified circuit for y = a?(b?(a & c ):c):(!c)
 ![opt_check4](./Images/opt_check4.png)
@@ -327,6 +327,44 @@ Following represents another sample multiple module  verilog code and its simpli
 ![multiple_module_opt2](./Images/multiple_module_opt2.png)
 
 ### Sequential logic optimization
+
+We have used few examples of seuqential circuits to demonstrate optimization done by yosys.
+
+```
+yosys> read_liberty -lib <path to lib file>
+yosys> read_verilog <path to verilog file>
+yosys> synth -top <top_module_name>
+yosys> dfflibmap -liberty <path to lib file>
+yosys> opt_clean -purge
+yosys> abc -liberty <path to lib file>
+yosys> show
+yosys> write_verilog -noattr <file_name_netlist.v>
+```
+
+Following represents dff_const1 verilog code and its simplified schematic diagram after optimization.
+![dff_const1_code](./Images/dff_const1_code.png)
+
+![dff_const1](./Images/dff_const1.png)
+
+Following represents dff_const2 verilog code and its simplified schematic diagram after optimization.
+![dff_const2_code](./Images/dff_const2_code.png)
+
+![dff_const2](./Images/dff_const2.png)
+
+Following represents dff_const3 verilog code and its simplified schematic diagram after optimization.
+![dff_const3_code](./Images/dff_const3_code.png)
+
+![dff_const3](./Images/dff_const3.png)
+
+Following represents dff_const4 verilog code and its simplified schematic diagram after optimization.
+![dff_const4_code](./Images/dff_const4_code.png)
+
+![dff_const4](./Images/dff_const4.png)
+
+Following represents dff_const5 verilog code and its simplified schematic diagram after optimization.
+![dff_const5_code](./Images/dff_const5_code.png)
+
+![dff_const5](./Images/dff_const5.png)
 
 </details>
 
