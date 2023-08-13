@@ -371,9 +371,15 @@ Following represents dff_const5 verilog code and its simplified schematic diagra
 The yosys tool removes unused logic not connected to outputs. Also, it removes outputs and its associated logic not required in output which is illustrated in below examples.
 
 Following represents code and schematic of sample counter_opt design. Though the code contains 3bit register, but still yosys will retain logic only visible in required final output.
+![counter_opt_code](./Images/counter_opt_code.png)
+
 ![counter_opt](./Images/counter_opt.png)
 
+Following retention in logic required in output compared to previous one.
+![counter_opt2_code](./Images/counter_opt2_code.png)
+
 ![counter_opt2](./Images/counter_opt2.png)
+
 
 </details>
 
