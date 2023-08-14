@@ -408,7 +408,7 @@ Consider the following mux code and its simulation in behaviourial modelling.
 
 ![ternary_mux_pre_sim](./Images/ternary_mux_pre_sim.png)
 
-![ternary_mux_pre](./Images/ternary_mux_pre.png)
+![ternary_mux](./Images/ternary_mux.png)
 
 
 Now, after the synthesis of netlist of RTL design,  we verify the post synthesis simulation by using following command to use verilog models for GLS.
@@ -437,7 +437,7 @@ Following is sample RTL design, simulation and synthesis of blocking caveat code
 
 ![blocking_pre_sim](./Images/blocking_pre_sim.png)
 
-![blocking_mux](./Images/blocking_mux.png)
+![blocking](./Images/blocking.png)
 
 Now, after synthesis, we observe synthesis simulation mismatch. 
 ![blocking_post_sim](./Images/blocking_post_sim.png)
