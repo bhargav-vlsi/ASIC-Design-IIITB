@@ -562,7 +562,7 @@ At last line of .bashrc
 export PATH=/home/<username>/riscv_toolchain/riscv64-unknown-elf-gcc-8.3.0-2019.08.0-x86_64-linux-ubuntu14/bin:$PATH
 ```
 
-Save and close the .bashrc file. Then give following command to apply the chnages of .bashrc file.
+Save and close the .bashrc file. Then give following command to apply the changes of .bashrc file.
 
 ```
 source .bashrc
@@ -766,6 +766,50 @@ We have a RISCV design written in verilog. We convert our c code into hex code a
 </details>
 
 <details>
+<summary>DAY-3</summary>
+
+### Overview
+This section describes about TL-verilog and Makerchip platform & its examples.
+
+### Makerchip platform
+Makerchip platform is a cloud based web application that takes design input in form of TL-verilog code and provides logical diagram & waveform as output without any testbench provided externally.
+
+### Pythagorean example
+We take pythagorean example from platform and execute it to understand its flow. We compile and observe the output on different windows as shown below.
+
+![maker_chip_pythagorean](./Images2/maker_chip_pythagorean.png)
+
+### Few other sample exercise in Maker chip platform (combinational circuits0
+Here we consider simple logic gates as examples.
+
+![maker_chip_gates](./Images2/maker_chip_gates.png)
+
+Here we consider example of Full adder to understand use of vectors.
+
+![maker_chip_adder](./Images2/maker_chip_adder.png)
+
+Here we consider example of multiplexer.
+
+![maker_chip_mux](./Images2/maker_chip_mux.png)
+
+Here is example for calculator.
+
+![maker_chip_calc1](./Images2/maker_chip_calc1.png)
+
+### Sequential circuits in Maker chip platform
+
+Here is example for free counter.
+
+![maker_chip_counter](./Images2/maker_chip_counter.png)
+
+Here is sequential calculator that remembers previous results for next calculation.
+
+![maker_chip_calc2](./Images2/maker_chip_calc2.png)
+
+
+</details>
+
+<details>
 <summary>REFERENCES</summary>
 
     
@@ -781,6 +825,8 @@ https://github.com/The-OpenROAD-Project/OpenSTA
 
 http://opencircuitdesign.com/magic/
 
-https://github.com/kunalg123/sky130RTLDesignAndSynthesisWorkshop.git
+https://github.com/kunalg123/
+
+https://github.com/stevehoover/RISC-V_MYTH_Workshop
 
 </details>
