@@ -539,7 +539,9 @@ So even after synthesis, functionality is retained.
 
 <details>
 <summary>DAY-0</summary>
+
 This section describes steps to install and configure RISCV tool chain
+
 ```
 git clone https://github.com/kunalg123/riscv_workshop_collaterals.git
 sudo apt install libboost-regex-dev
@@ -547,19 +549,27 @@ cd riscv_workshop_collaterals
 chmod 755 run.sh
 ./run.sh
 ```
+
 The above commands usually creates a folder called "riscv_toolchain" in home folder. Follow the next commands to access the tool chain from anywhere in terminal. Otherwise, path to bin folder of toolchain has to be provided to execute respective commands.
+
 ```
 gedit .bashrc
 ```
+
 At last line of .bashrc
+
 ```
 export PATH=/home/<username>/riscv_toolchain/riscv64-unknown-elf-gcc-8.3.0-2019.08.0-x86_64-linux-ubuntu14/bin:$PATH
 ```
+
 Save and close the .bashrc file. Then give following command to apply the chnages of .bashrc file.
+
 ```
 source .bashrc
 ```
+
 ![riscv_toolchain](./Images2/riscv_toolchain.png)
+
 Riscv toolchain installed
 
 </details>
