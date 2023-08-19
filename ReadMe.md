@@ -1,5 +1,6 @@
 # ASIC Design
 
+## RTL design using Verilog
 <details>
 <summary>DAY-0</summary>
 <br>
@@ -531,6 +532,156 @@ Following represents a sample generate loop RTL code, simulation, schematic and 
 
 So even after synthesis, functionality is retained.
 ![rca_post_sim](./Images/rca_post_sim.png)
+
+</details>
+
+## RISCV based Myth
+
+<details>
+<summary>DAY-0</summary>
+This section describes steps to install and configure RISCV tool chain
+```
+git clone https://github.com/kunalg123/riscv_workshop_collaterals.git
+sudo apt install libboost-regex-dev
+cd riscv_workshop_collaterals
+chmod 755 run.sh
+./run.sh
+```
+The above commands usually creates a folder called "riscv_toolchain" in home folder. Follow the next commands to access the tool chain from anywhere in terminal. Otherwise, path to bin folder of toolchain has to be provided to execute respective commands.
+```
+gedit .bashrc
+```
+At last line of .bashrc
+```
+export PATH=/home/<username>/riscv_toolchain/riscv64-unknown-elf-gcc-8.3.0-2019.08.0-x86_64-linux-ubuntu14/bin:$PATH
+```
+Save and close the .bashrc file. Then give following command to apply the chnages of .bashrc file.
+```
+source .bashrc
+```
+![riscv_toolchain](./Images/riscv_toolchain.png)
+Riscv toolchain installed
+
+</details>
+
+<details>
+<summary>DAY-1</summary>
+
+### Overview
+This section explains about development of applications on custom hardware architecture. To begin with, we develop RTL of architecture and create layout of the same.
+
+### Introduction
+We have hardware resources and software codes running on these resources. Compiler is a tool that convert high level code to assembly level code. Assembler is a tool that converts assembly level code to machine level code. The assembly level code is specific to type of architecture used. We will also look into several instructions and concepts such as psuedo instructions, integer RV64I, multiply extenstion RV64M, single & double precision floating point extension, application binary interface, memory allocation and stack pointer.
+
+
+### GCC compiler and sample usage
+Gcc compiler is used to convert C code into machine code for computer to execute. Here is sample commands to compile and execute sample c code.
+```
+gcc -o code.out code.c
+./code.out
+```
+
+Following is sample c code for sum of 'n' numbers.
+```
+#include<stdio.h>
+int main()
+{
+	int n,sum=0;
+	printf("Enter n: ");
+	scanf("%d",&n);
+	for(int i=1;i<=n;i++) {
+	sum=sum+i; }
+	printf("Sum of %d numbers is %d\n",n,sum);
+	return 1;
+}
+```
+
+![sum1ton](./Images/sum1ton.png)
+
+### RISCV gcc compilation and assembly code
+Folowing command describes the way to compile c code in riscv gcc compiler.
+```
+riscv64-unknown-elf-gcc -O1 -mabi=lp64 -march=rv64i -o <output>.o <inputfile>.c
+```
+
+Following represents way to observe object(compiled assembly code)
+```
+riscv64-unknown-elf-objdump -d <output>.o
+```
+
+If we want a bit optimized version of assembly code we use following option and use same command to observe object file.
+```
+riscv64-unknown-elf-gcc -Ofast -mabi=lp64 -march=rv64i -o <output>.o <inputfile>.c
+```
+### Execution of output file in RISCV tool chain
+We use following command to execute object file using riscv tool chain.
+```
+spike pk <output>.o
+```
+
+![spike_pk_sum1ton](./Images/spike_pk_sum1ton.png)
+
+We use following command to debug the output
+```
+spike -d pk <output>.o
+```
+![spike_pk_debug](./Images/spike_pk_debug.png)
+
+We have few commands to execute and observe specific variables or registers during debugging session.
+--To run code until a specific location
+```
+until pc 0 <memory_location>
+```
+
+--To observe contents of register in specific core
+```
+reg <core> <register>
+```
+
+Press <Enter> to execute line by line in assembly code.
+
+Press <q> to to quit debugging session.
+
+### Integer floating point representation
+Human beings are accustomed to use decimal number system and computers are designed for binary number system. Hence, there is a requirement for conversion of decimal to binary system. Present day computers are designed to handle 64 bit numbers where we usually divide 64 bits into two 32 bits group, each 32 bit group is divided into four 8 bit group, each 8 bit group is divided into either 2 nibbles or simply considered doubleword.
+
+The number of patterns for any 'n' bits is 2^(n).
+
+Signed binary numbers are represented using 2's complement numbers. MSB of a binary number is 0 for positive number and 1 for negative number in any representation.
+
+
+Here is sample C code to understand floating representation and highest & lowest value possible in RISCV.
+
+```
+#include<stdio.h>
+#include<math.h>
+
+int main()
+{
+	unsigned long long int max=(unsigned long long int) (pow(2,64)-1);
+	printf("Highest num represented by unsigned long long integer for 64 bit is %llu\n",max);
+	
+	max=(unsigned long long int) (pow(2,10)-1);
+	printf("Highest num represented by unsigned long long integer for 10 bit is %llu\n",max);
+	
+	max=(unsigned long long int) (pow(2,127)-1);
+	printf("Highest num represented by unsigned long long integer for 127 bit is %llu\n",max);
+	
+	unsigned long long int min=(unsigned long long int) (pow(2,64)*-1);
+	printf("Lowest num represented by unsigned long long integer for 64 bit is %llu\n",min);
+	
+	long long int max2=(long long int) (pow(2,63)-1);// bug was here type long long int instead of just int in video
+	printf("Highest num represented by signed long long integer for 64 bit is %lld\n",max2);
+	
+	long long int min2=(long long int) (pow(2,63)*-1);// bug was here type long long int instead of just int in video
+	printf("Lowest num represented by signed long long integer for 64 bit is %lld\n",min2);
+	return 1;
+}
+```
+
+Following output represents the output for above code.
+
+![unsigned_signed_output](./Images/unsigned_signed_output.png)
 
 </details>
 
