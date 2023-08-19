@@ -559,7 +559,7 @@ Save and close the .bashrc file. Then give following command to apply the chnage
 ```
 source .bashrc
 ```
-![riscv_toolchain](./Images/riscv_toolchain.png)
+![riscv_toolchain](./Images2/riscv_toolchain.png)
 Riscv toolchain installed
 
 </details>
@@ -568,9 +568,10 @@ Riscv toolchain installed
 <summary>DAY-1</summary>
 
 ### Overview
-This section explains about development of applications on custom hardware architecture. To begin with, we develop RTL of architecture and create layout of the same.
+This section explains about development of applications on custom hardware architecture and RISCV toolchain.
 
 ### Introduction
+RISC- Reduced Instruction Set Architecture Computer
 We have hardware resources and software codes running on these resources. Compiler is a tool that convert high level code to assembly level code. Assembler is a tool that converts assembly level code to machine level code. The assembly level code is specific to type of architecture used. We will also look into several instructions and concepts such as psuedo instructions, integer RV64I, multiply extenstion RV64M, single & double precision floating point extension, application binary interface, memory allocation and stack pointer.
 
 
@@ -596,7 +597,7 @@ int main()
 }
 ```
 
-![sum1ton](./Images/sum1ton.png)
+![sum1ton](./Images2/sum1ton.png)
 
 ### RISCV gcc compilation and assembly code
 Folowing command describes the way to compile c code in riscv gcc compiler.
@@ -619,13 +620,13 @@ We use following command to execute object file using riscv tool chain.
 spike pk <output>.o
 ```
 
-![spike_pk_sum1ton](./Images/spike_pk_sum1ton.png)
+![spike_pk_sum1ton](./Images2/spike_pk_sum1ton.png)
 
 We use following command to debug the output
 ```
 spike -d pk <output>.o
 ```
-![spike_pk_debug](./Images/spike_pk_debug.png)
+![spike_pk_debug](./Images2/spike_pk_debug.png)
 
 We have few commands to execute and observe specific variables or registers during debugging session.
 --To run code until a specific location
@@ -649,7 +650,8 @@ The number of patterns for any 'n' bits is 2^(n).
 
 Signed binary numbers are represented using 2's complement numbers. MSB of a binary number is 0 for positive number and 1 for negative number in any representation.
 
-
+For unsigned numbers of n bit, range -> 0 to 2^(n)-1.
+For signed numbers of n bit, range -> -(2^(n-1)) to (2^(n-1)-1).
 Here is sample C code to understand floating representation and highest & lowest value possible in RISCV.
 
 ```
@@ -681,7 +683,75 @@ int main()
 
 Following output represents the output for above code.
 
-![unsigned_signed_output](./Images/unsigned_signed_output.png)
+![unsigned_signed_output](./Images2/unsigned_signed_output.png)
+
+</details>
+
+<details>
+<summary>DAY-2</summary>
+
+### Application Binary Interface
+
+Interface simply refers to appearance & functionality of a system without deeper understanding architecture & implementation.
+Ex: Users need to know mainly about appearance of a building rather than construction of the same.
+
+Ex: Programmer need to know strcuture or syntax of a application library rather than its internal implementation.
+
+Application Binary interface uses registers to access hardware resources. 
+
+RISC uses little endian architecture for storing data where most significant byte is in highest memory location.
+
+RISC uses little endian architecture and stores 1 byte in each location. Instructions are 32 bit but data is 64 bit in 64 bit architeciture. It is a byte addressable memory. We specify -march=rv64i as architecture and hence set of integer base instructions.
+
+We have 32 registers in RISCV architecture with x00, x01 and so on as representation.
+
+![register_riscv](./Images2/register_riscv.png)
+
+We have a sample for ABI system call. Following are two codes (C & ASM)
+
+C code
+
+```
+#include <stdio.h>
+
+extern int load(int x, int y); 
+
+int main() {
+	int result = 0;
+       	int count = 3;
+    	result = load(0x0, count+1);
+    	printf("Sum of number from 1 to %d is %d\n", count, result); 
+}
+```
+
+load.S
+
+```
+.section .text
+.global load
+.type load, @function
+
+load:
+	add 	a4, a0, zero //Initialize sum register a4 with 0x0
+	add 	a2, a0, a1   // store count of 10 in register a2. Register a1 is loaded with 0xa (decimal 10) from main program
+	add	a3, a0, zero // initialize intermediate sum register a3 by 0
+loop:	add 	a4, a3, a4   // Incremental addition
+	addi 	a3, a3, 1    // Increment intermediate register by 1	
+	blt 	a3, a2, loop // If a3 is less than a2, branch to label named <loop>
+	add	a0, a4, zero // Store final result to register a0 so that it can be read by main program
+	ret
+```
+
+Following is output after compilation & execution of above codes.
+
+![c_asm_output](./Images2/c_asm_output.png)
+
+
+### Execution of C code on RISCV CPU Verilog
+
+We have a RISCV design written in verilog. We convert our c code into hex code and simulate and execute it on RISCV CPU code and get back output on terminal. We have all necessary codes in labs folder.
+
+![c_riscv_execution](./Images2/c_riscv_execution.png)
 
 </details>
 
