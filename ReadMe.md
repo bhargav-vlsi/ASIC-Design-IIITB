@@ -638,9 +638,9 @@ until pc 0 <memory_location>
 reg <core> <register>
 ```
 
-Press <Enter> to execute line by line in assembly code.
+Press "Enter" to execute line by line in assembly code.
 
-Press <q> to to quit debugging session.
+Press "q" to to quit debugging session.
 
 ### Integer floating point representation
 Human beings are accustomed to use decimal number system and computers are designed for binary number system. Hence, there is a requirement for conversion of decimal to binary system. Present day computers are designed to handle 64 bit numbers where we usually divide 64 bits into two 32 bits group, each 32 bit group is divided into four 8 bit group, each 8 bit group is divided into either 2 nibbles or simply considered doubleword.
